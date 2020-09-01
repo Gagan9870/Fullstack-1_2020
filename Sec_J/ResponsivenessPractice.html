@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Responsive WebSite Practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-padding-top:70px ;
+            scroll-behavior: smooth;
+        }
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header{
+            width: 100%;
+            height: 70px;
+            max-width: 1200px;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+
+        }
+        .menu{
+            list-style: none;
+            float: right;
+        }
+        .menu li{
+            display: inline-block;
+            line-height:70px ;
+        }
+        .menu li a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            padding: 0 20px;
+            transition: .4s;
+        }
+        .show-btn,.hide-btn,#chk{
+            font-size: 30px;
+            color: white;
+            line-height: 70px;
+            transition: .4s;
+            display: none;
+        }
+        .show-btn{
+            float: right;
+        }
+        .banner{
+            width: 100%;
+            height: 680px;
+            margin-top:90px;
+            color: white;
+            font-size: 40px;
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .banner{
+            background-image: url(../Sec_J/Images/practical8.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .circlecontainer h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+        }
+        .circlecontainer{
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+        .circlecontainer img{
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            margin-left: 40px;
+        }
+        .boxcontainer h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+        }
+        .boxcontainer{
+            width: 100%;
+            max-width: 1200px;
+            /* margin-bottom: 20px; */
+        }
+        .boxcontainer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .left{
+            width: 50%;
+            background-color: tomato;
+            height: 500px;
+            float: left;
+            overflow: hidden;
+            
+        }
+        .left p{
+            font-size: 20px;
+            padding: 10px;
+            text-align: justify;
+            line-height: 28px;
+            
+        }
+        .left h2{
+            text-align: left;
+            font-size: 30px;
+            margin:0 10px;
+        }
+        .right{
+            width: 48%;
+            height: 550px;
+            float: right;
+            
+        }
+        .artical{
+            height: 28%;
+            margin-bottom: 20px;
+            background-color: chocolate;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            overflow: hidden;
+        }
+        #p1{
+            background-image: url(../Sec_J/Images/p1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #p2{
+            background-image: url(../Sec_J/Images/p2.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #p3{
+            background-image: url(../Sec_J/Images/p3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .gridcontainer{
+            /* border: 2px solid; */
+            width: 100%;
+            /* max-width: 1200px; */
+            /* background-color:rgba(201, 145, 198, 0.856); */
+            text-align: center;
+        }
+        .gridcontainer::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .grid{
+            margin: 20px 0;
+            /* border: 2px solid blue; */
+            width: 20%;
+            height: 400px;
+            margin-left: 48px;
+            float: left;
+            background-color: aqua;
+            /* position: relative; */
+
+        }
+        .grid img{
+            width: 100%;
+            height: 150px;
+            margin-bottom: 5px;
+        }
+        .grid p{
+            text-align: justify;
+            font-size: 18px;
+            word-spacing: 10px;
+            margin: 5px 0;
+        }
+        .grid a{
+            display: block;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            padding: 15px 0;
+            background-color: red;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .grid a:hover{
+            color: yellow;
+            background-color: blueviolet;
+        } 
+        .contact{
+            width: 100%;
+            text-align: center;
+        }
+        .footer{
+            width: 100%;
+            background-color:rgba(86, 86, 121, 0.445);
+            margin-top: 20px;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media(min-width: 801px) and (max-width: 1199px){
+            html{
+                scroll-padding-top:70px ;
+                scroll-behavior: smooth;
+            }
+            .container{
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .header{
+                width: 100%;
+                height: 70px;
+                max-width: 1200px;
+                background-color: gray;
+                position: fixed;
+                top: 0;
+
+            }
+            .menu{
+                list-style: none;
+                float: right;
+            }
+            .menu li{
+                display: inline-block;
+                line-height:70px ;
+            }
+            .menu li a{
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                text-transform: uppercase;
+                padding: 0 20px;
+            }
+            .banner{
+                width: 100%;
+                height: 680px;
+                margin-top:90px;
+                color: white;
+                font-size: 40px;
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .banner{
+                background-image: url(../Sec_J/Images/practical8.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+            .circlecontainer{
+                width: 100%;
+                text-align: center;
+                /* border: 2px solid; */
+                padding: 0 15%;
+            }   
+            .circlecontainer img{
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                margin-left:5% ;
+                /* padding: 0 13%; */
+
+            }
+            .boxcontainer h1{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 20px;
+            }
+            .boxcontainer{
+                width: 100%;
+                max-width: 1200px;
+                /* margin-bottom: 20px; */
+            }
+            .boxcontainer::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .left{
+                width: 50%;
+                background-color: tomato;
+                height: 500px;
+                float: left;
+                overflow: hidden;
+                
+            }
+            .left p{
+                font-size: 20px;
+                padding: 10px;
+                text-align: justify;
+                line-height: 28px;
+                
+            }
+            .left h2{
+                text-align: left;
+                font-size: 30px;
+                margin:0 10px;
+            }
+            .right{
+                width: 48%;
+                height: 550px;
+                float: right;
+                
+            }
+            .artical{
+                height: 28%;
+                margin-bottom: 20px;
+                background-color: chocolate;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                overflow: hidden;
+            }
+            #p1{
+                background-image: url(../Sec_J/Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p2{
+                background-image: url(../Sec_J/Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p3{
+                background-image: url(../Sec_J/Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .gridcontainer{
+                /* border: 2px solid; */
+                width: 100%;
+                padding: 0 15%;
+                text-align: center;
+                /* max-width: 1200px; */
+                /* background-color:rgba(201, 145, 198, 0.856); */
+                text-align: center;
+            }
+            .gridcontainer::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .grid{
+                /* border: 2px solid; */
+                width: 250px;
+                height: 400px;
+                margin-left: 5%;
+
+
+            }
+            .grid img{
+                width: 100%;
+                height: 150px;
+                margin-bottom: 5px;
+            }
+            .grid p{
+                text-align: justify;
+                font-size: 18px;
+                word-spacing: 10px;
+                margin: 5px 0;
+            }
+            .grid a{
+                display: block;
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+                padding: 15px 0;
+                background-color: red;
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+            .grid a:hover{
+                color: yellow;
+                background-color: blueviolet;
+            }
+        }
+        @media(max-width: 800px){
+            .header{
+                width: 100%;
+                height: 70px;
+                /* position: fixed; */
+                top: 0;
+            }
+            .show-btn{
+                display: block;
+                position: fixed;
+                right: 10px;
+            }
+            .menu{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                right: -100%;
+                background-color:#333;
+                text-align: center;
+                padding: 80px 0;
+                line-height: normal;
+                transition: .7s;
+            }
+            .menu li{
+                display: block;
+            }
+            .menu li a{
+                display: block;
+            }
+            #chk:checked ~.menu{
+                right: 0;
+            }
+            .hide-btn{
+                display: block;
+                position:absolute;
+                right: 10px;
+                top: 10px;
+            }
+            .banner{
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+                margin-top:90px;
+                color: white;
+                font-size: 25px;
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .banner{
+                background-image: url(../Sec_J/Images/practical8.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+            .circlecontainer{
+                width: 100%;
+                text-align: center;
+                /* border: 2px solid; */
+                padding: 0 3%;
+            }   
+            .circlecontainer img{
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                margin-left:5% ;
+                /* padding: 0 13%; */
+
+            }
+            .boxcontainer h1{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 20px;
+            }
+            .boxcontainer{
+                width: 100%;
+                max-width: 1200px;
+                /* margin-bottom: 20px; */
+            }
+            .boxcontainer::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .left{
+                width: 50%;
+                background-color: tomato;
+                height: 500px;
+                float: left;
+                overflow: hidden;
+                
+            }
+            .left p{
+                font-size: 20px;
+                padding: 10px;
+                text-align: justify;
+                line-height: 28px;
+                
+            }
+            .left h2{
+                text-align: left;
+                font-size: 30px;
+                margin:0 10px;
+            }
+            .right{
+                width: 48%;
+                height: 550px;
+                float: right;
+                
+            }
+            .artical{
+                height: 28%;
+                margin-bottom: 20px;
+                background-color: chocolate;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                overflow: hidden;
+            }
+            #p1{
+                background-image: url(../Sec_J/Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p2{
+                background-image: url(../Sec_J/Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p3{
+                background-image: url(../Sec_J/Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .gridcontainer{
+                /* border: 2px solid; */
+                width: 100%;
+                padding: 0 8.5%;
+                /* margin: 0 10%; */
+                text-align: center;
+                /* max-width: 1200px; */
+                /* background-color:rgba(201, 145, 198, 0.856); */
+                text-align: center;
+            }
+            .gridcontainer::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .grid{
+                /* border: 2px solid; */
+                width: 200px;
+                height: 450px;
+                /* margin:0 15%; */
+                /* margin-bottom: 20px; */
+
+
+            }
+            .grid img{
+                width: 100%;
+                height: 150px;
+                margin-bottom: 5px;
+            }
+            .grid p{
+                text-align: justify;
+                font-size: 18px;
+                word-spacing:10px;
+                margin: 5px 0;
+            }
+            .grid a{
+                display: block;
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+                padding: 15px 0;
+                background-color: red;
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+            .grid a:hover{
+                color: yellow;
+                background-color: blueviolet;
+            }
+        }  
+        @media(max-width: 600px){
+            .container{
+                min-width: 332px;
+            }
+            .header{
+                width: 100%;
+                height: 70px;
+                /* position: fixed; */
+                top: 0;
+            }
+            .show-btn{
+                display: block;
+                position: fixed;
+                right: 10px;
+            }
+            .menu{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                right: -100%;
+                background-color:#333;
+                text-align: center;
+                padding: 80px 0;
+                line-height: normal;
+                transition: .7s;
+            }
+            .menu li{
+                display: block;
+            }
+            .menu li a{
+                display: block;
+            }
+            #chk:checked ~.menu{
+                right: 0;
+            }
+            .hide-btn{
+                display: block;
+                position:absolute;
+                right: 10px;
+                top: 10px;
+            }
+            .banner{
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+                margin-top:90px;
+                color: white;
+                font-size: 20px;
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .banner{
+                background-image: url(../Sec_J/Images/practical8.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+            .circlecontainer{
+                width: 100%;
+                text-align: center;
+                /* border: 2px solid; */
+                padding: 0 10%;
+            }   
+            .circlecontainer img{
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                margin-left:5% ;
+                /* padding: 0 13%; */
+
+            }
+            .boxcontainer h1{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 20px;
+            }
+            .boxcontainer{
+                width: 100%;
+                max-width: 1200px;
+                /* margin-bottom: 20px; */
+            }
+            .boxcontainer::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .left{
+                width: 100%;
+                background-color: tomato;
+                height:150px;
+                margin-bottom: 20px;
+                /* float: left; */
+                overflow: hidden;
+                
+            }
+            .left p{
+                font-size: 20px;
+                padding: 10px;
+                text-align: justify;
+                line-height: 28px;
+                
+            }
+            .left h2{
+                text-align: left;
+                font-size: 30px;
+                margin:0 10px;
+            }
+            .right{
+                width: 100%;
+                /* height: 550px; */
+                /* float: right; */
+                
+            }
+            .artical{
+                height: 150px;
+                margin-bottom: 20px;
+                background-color: chocolate;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                overflow: hidden;
+            }
+            #p1{
+                background-image: url(../Sec_J/Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p2{
+                background-image: url(../Sec_J/Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #p3{
+                background-image: url(../Sec_J/Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .gridcontainer{
+                /* border: 2px solid; */
+                width: 100%;
+                padding: 0 8.5%;
+                /* margin: 0 10%; */
+                text-align: center;
+                /* max-width: 1200px; */
+                /* background-color:rgba(201, 145, 198, 0.856); */
+                text-align: center;
+            }
+            .gridcontainer::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .gridcontainer h1{
+                font-size:20px;
+            }
+            .grid{
+                /* border: 2px solid; */
+                width: 80%;
+                height: auto;
+                /* border-radius: 10%; */
+                margin:20px 10%;
+
+                /* margin-bottom: 20px; */
+
+
+            }
+            .grid img{
+                width: 100%;
+                height: 200px;
+                margin-bottom: 5px;
+            }
+            .grid p{
+                text-align: justify;
+                font-size: 18px;
+                word-spacing:10px;
+                margin: 5px 0;
+            }
+            .grid a{
+                display: block;
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+                padding: 15px 0;
+                background-color: red;
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+            .grid a:hover{
+                color: yellow;
+                background-color: blueviolet;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-btn">
+                <i class="fa fa-bars" ></i>
+            </label>
+            <ul class="menu">
+                <li><a href="#">home</a></li>
+                <li><a href="#About Us">about</a></li>
+                <li><a href="#TEAM MEMBERS">team</a></li>
+                <li><a href="#TECHNOLOGIES USED">technologies</a></li>
+                <li><a href="#CONTACT">contact</a></li>
+                <label for="chk" class="hide-btn">
+                    <i class="fa fa-times" ></i>
+                </label>
+            </ul>
+        </div>
+        <div class="banner">
+            <h2>Responsive WebLayout</h2>
+        </div>
+        <div class="circlecontainer">
+            <h1><a name="TEAM MEMBERS">TEAM MEMBERS</a></h1>
+            <img src="../Sec_J/Images/emp1.png" alt="">
+            <img src="../Sec_J/Images/emp2.png" alt="">
+            <img src="../Sec_J/Images/emp3.png" alt="">
+            <img src="../Sec_J/Images/emp4.png" alt="">            
+
+        </div>
+        <div class="boxcontainer">
+            <h1><a name="About Us">About Us</a></h1>
+            <div class="left">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit id dolores ut vel dicta nisi unde velit, similique fugiat quas. Lorem ducimus sed veritatis sint porro possimus quo, nemo quae quos. Porro dolores officiis repellendus? Molestiae sint, eos sequi, natus quisquam unde sit magnam minus porro ipsum ex nulla beatae soluta! Veritatis et sunt fuga cum harum perferendis est, odit facilis repudiandae nostrum praesentium, quasi eos possimus beatae at animi? Exercitationem inventore quos reiciendis architecto corporis deleniti dolor quaerat expedita vel cum vero corrupti saepe, nobis harum perspiciatis, at, libero fuga aperiam dolorum obcaecati quasi! Quidem iusto explicabo iste nesciunt consequuntur? Minus laboriosam dolores quaerat iure in quam optio aliquid amet eum cum ducimus sed minima illum, dolor fuga totam voluptatem eaque expedita. Illo consequatur nisi, aperiam, tempora reprehenderit voluptatem tenetur recusandae soluta obcaecati voluptatibus maiores, officia nemo repellendus esse eveniet porro nostrum quod sequi quos. Ducimus, ut! Impedit.</p>
+            </div>
+            <div class="right">
+                <div class="artical" id="p1">
+                    <h2>PROJECT-1</h2>
+                </div>
+                <div class="artical" id="p2">
+                    <h2>PROJECT-2</h2>
+                </div>
+                <div class="artical" id="p3">
+                    <h2>PROJECT-3</h2>
+                </div>
+            </div>
+        </div>
+        <div class="gridcontainer">
+            <h1><a name="TECHNOLOGIES USED">TECHNOLOGIES USED</a></h1>
+            <div class="grid">
+                <img src="../Sec_J/Images/html.png" alt="HTML image">
+                <h4>Introduction to HTML</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dicta est omnis id in quos architec
+                to quas, sed quo ipsam praesentium consequatur sit repellendus labore magni</p>
+                <a href="https://gagan9870.github.io/FullStack_Practicals/practicals/practical-5-html.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Sec_J/Images/CSS.jpg" alt="CSS image">
+                <h4>Introduction to CSS</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dicta est omnis id in quos architec
+                to quas, sed quo ipsam praesentium consequatur sit repellendus labore magni</p>
+                <a href="https://gagan9870.github.io/FullStack_Practicals/practicals/practical-5-css.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Sec_J/Images/bootstrap.png" alt="BootStrap image">
+                <h4>Introduction to Bootstrap</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dicta est omnis id in quos architec
+                to quas, sed quo ipsam praesentium consequatur sit repellendus labore magni</p>
+                <a href="https://gagan9870.github.io/FullStack_Practicals/practicals/practical-5-bootstrap.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Sec_J/Images/js.png" alt="Java Script image">
+                <h4>Introduction to JavaScript</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dicta est omnis id in quos architec
+                to quas, sed quo ipsam praesentium consequatur sit repellendus labore magni</p>
+                <a href="https://gagan9870.github.io/FullStack_Practicals/practicals/practical-5-js.html" target="_blank">Read More</a>
+            </div>
+        </div>
+        <div class="contact">
+            <h1><a name="CONTACT">CONTACT</a></h1>
+            <div class="footer">
+                <p>
+                    WebSite Template for Practical-9 &copy;
+                    <a href="https://Beta-Labs.in">Beta-Labs</a><br><br>
+                    <a href="#top">Back to Top</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
